@@ -7,13 +7,8 @@ using TrilhaNetAzureDesafio.Models;
 
 namespace TrilhaNetAzureDesafio.Context
 {
-    public class RHContext : DbContext
+    public class RHContext(DbContextOptions<RHContext> options) : DbContext(options)
     {
-        public RHContext(DbContextOptions<RHContext> options) : base(options)
-        {
-
-        }
-
         public DbSet<Funcionario> Funcionarios { get; set; }
     }
 }
